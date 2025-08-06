@@ -1,0 +1,131 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Grid Layout */
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 200px 1fr; 
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    grid-area: header;
+    background-color: #2ecc71;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+  }
+  
+  /* Sidebar */
+  aside {
+    grid-area: sidebar;
+    background-color: rgb(238, 233, 233);
+    color: rgb(150, 0, 255);
+    padding: 30px;
+    width: 220px;
+  }
+  aside ul {
+    padding-left: 30px; 
+  }
+  
+  /* Main Content */
+  main {
+    grid-area: main;
+    padding: 30px;
+  }
+  
+  /* Footer */
+  footer {
+    grid-area: footer;
+    background-color: #2ecc71;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  .dark-mode-box {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* space between checkbox and text */
+    cursor: pointer;
+  }
+/* Make the main checkbox visible and styled */
+#Darkmodetoggle {
+    position: absolute;
+    top: 25px;
+    right: 117px;
+    transform: scale(1.2);
+    z-index: 2;
+    cursor: pointer;
+    accent-color: rgb(26, 2, 242); 
+    background-color: blue;
+  }
+  
+  /* Dark Mode Theme */
+  #Darkmodetoggle:checked ~ .wrapper {
+    background-color: #000000;
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper header,
+  #Darkmodetoggle:checked ~ .wrapper footer {
+    background-color: #222;
+    color: white;
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper aside {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper main {
+    background-color: #000;
+    color: white;
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper li {
+    color: rgb(150, 0, 255);
+    text-decoration: underline;
+  }
+/* DARK MODE STYLES */
+#Darkmodetoggle:checked ~ .wrapper {
+    background-color: #121212;
+    color: white;
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper header,
+  #Darkmodetoggle:checked ~ .wrapper footer {
+    background-color: #1f1f1f;
+    color: white;
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper aside {
+    background-color: #2e2e2e;
+    color: rgb(154, 17, 239);
+    
+  }
+  
+  #Darkmodetoggle:checked ~ .wrapper main {
+    background-color: #000000;
+    color: white;
+  }
+ 
